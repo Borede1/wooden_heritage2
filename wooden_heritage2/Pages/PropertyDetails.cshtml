@@ -1,0 +1,148 @@
+﻿@page
+@model wooden_heritage2.Pages.PropertyDetailsModel
+@{
+    ViewData["Title"] = "Property Details";
+}
+
+<section class="about">
+    <h1>About Wooden Heritage Cabin</h1>
+    <p>
+        Wooden Heritage Cabin is a luxury cabin designed for comfort, privacy,
+        and timeless memories. Surrounded by warm wooden walls, each room
+        features rustic design with natural textures and warmth.
+    </p>
+</section>
+
+<section class="rooms">
+    <h2>Explore Our Cabin</h2>
+    <div class="room-grid">
+
+        <article class="room-card">
+            <figure>
+                <img src="~/images/bedroom.png" alt="Master suite with timber walls" class="curved">
+                <figcaption>Suite Room (AI Generated via Microsoft Copilot, 2026)</figcaption>
+            </figure>
+            <h3>Suite</h3>
+            <p>Warm timeless atmosphere wrapped in timber.</p>
+        </article>
+
+        <article class="room-card">
+            <figure>
+                <img src="~/images/bedroom2.png" alt="Cozy bedroom with warm lighting" class="curved">
+                <figcaption>Bedroom 2 (AI Generated via Microsoft Copilot, 2026)</figcaption>
+            </figure>
+            <h3>Bedroom</h3>
+            <p>A bedroom with warm lighting and a calming aesthetic.</p>
+        </article>
+
+        <article class="room-card">
+            <figure>
+                <img src="~/images/bedroom3.png" alt="Comfortable bedroom for families" class="curved">
+                <figcaption>Bedroom 3 (AI Generated via Microsoft Copilot, 2026)</figcaption>
+            </figure>
+            <h3>Bedroom</h3>
+            <p>Perfect for families or friends.</p>
+        </article>
+
+        <article class="room-card">
+            <figure>
+                <img src="~/images/bathroom.png" alt="Modern bathroom with heated floors" class="curved">
+                <figcaption>Bathroom (AI Generated via Microsoft Copilot, 2026)</figcaption>
+            </figure>
+            <h3>Bathroom</h3>
+            <p>Modern bathroom with heated floors and premium amenities.</p>
+        </article>
+
+        <article class="room-card">
+            <figure>
+                <img src="~/images/living-lounge.png" alt="Living room with fireplace" class="curved">
+                <figcaption>Living Lounge (AI Generated via Microsoft Copilot, 2026)</figcaption>
+            </figure>
+            <h3>Living Lounge</h3>
+            <p>Warm communal space with fireplace seating.</p>
+        </article>
+
+        <article class="room-card">
+            <figure>
+                <img src="~/images/kitchen.png" alt="Fully equipped modern kitchen" class="curved">
+                <figcaption>Kitchen (AI Generated via Microsoft Copilot, 2026)</figcaption>
+            </figure>
+            <h3>Kitchen</h3>
+            <p>Fully equipped kitchen for long stays.</p>
+        </article>
+
+        <article class="room-card">
+            <figure>
+                <img src="~/images/dining-area.png" alt="Spacious dining area" class="curved">
+                <figcaption>Dining Area (AI Generated via Microsoft Copilot, 2026)</figcaption>
+            </figure>
+            <h3>Dining Area</h3>
+            <p>Enjoy meals together with family and friends.</p>
+        </article>
+
+        <article class="room-card">
+            <figure>
+                <img src="~/images/private-tub.png" alt="Private outdoor hot tub" class="curved">
+                <figcaption>Hot Tub (AI Generated via Microsoft Copilot, 2026)</figcaption>
+            </figure>
+            <h3>Private Hot Tub</h3>
+            <p>Soak inside the hot tub and enjoy the moment.</p>
+        </article>
+
+        <article class="room-card">
+            <figure>
+                <img src="~/images/outdoor-deck.png" alt="Spacious wooden deck" class="curved">
+                <figcaption>Outdoor Deck (AI Generated via Microsoft Copilot, 2026)</figcaption>
+            </figure>
+            <h3>Outdoor Deck</h3>
+            <p>Spacious deck ideal for stargazing and morning coffee.</p>
+        </article>
+
+        <article class="room-card">
+            <figure>
+                <img src="~/images/outdoor-view.png" alt="Scenic outdoor view from cabin porch" class="curved">
+                <figcaption>Outdoor View (AI Generated via Microsoft Copilot, 2026)</figcaption>
+            </figure>
+            <h3>Outdoor View</h3>
+            <p>A dedicated porch for viewing the natural surroundings.</p>
+        </article>
+
+    </div>
+</section>
+
+<section class="pricing">
+    <h2>Prices & Info</h2>
+    <div class="pricing-grid">
+
+        <article class="pricing-card">
+            <h3>Standard</h3>
+            <p class="price">£90 / night</p>
+            <ul class="pricing-features">
+                <li>1 Bedroom</li>
+                <li>Private bathroom with shower</li>
+            </ul>
+        </article>
+
+        <article class="pricing-card">
+            <h3>Deluxe</h3>
+            <p class="price">£135 / night</p>
+            <ul class="pricing-features">
+                <li>2 Bedrooms with balcony</li>
+                <li>2 Bathrooms with bathtub</li>
+                <li>Private hot tub access</li>
+            </ul>
+        </article>
+
+        <article class="pricing-card">
+            <h3>Entire Cabin</h3>
+            <p class="price">£350 / night</p>
+            <ul class="pricing-features">
+                <li>4 Bedrooms</li>
+                <li>Full kitchen and dining area</li>
+                <li>Private outdoor deck and pool</li>
+            </ul>
+        </article>
+
+    </div>
+    <a asp-page="/Contact" class="button">Book Your Stay</a>
+</section>

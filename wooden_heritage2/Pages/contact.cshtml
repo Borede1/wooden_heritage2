@@ -1,0 +1,63 @@
+﻿@page
+@model wooden_heritage2.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<section>
+    <h1>Contact Us</h1>
+    <p>Questions or ready to book? Send us a message.</p>
+
+    @if (Model.SuccessMessage != null)
+    {
+        <p class="success-message">@Model.SuccessMessage</p>
+    }
+
+    <form method="post" aria-label="Contact form">
+        @Html.AntiForgeryToken()
+
+        <label for="name">Full Name</label>
+        <input id="name" name="Name" type="text"
+               placeholder="Your Name" required aria-required="true">
+
+        <label for="email">Email Address</label>
+        <input id="email" name="Email" type="email"
+               placeholder="your.email@example.com" required aria-required="true">
+
+        <label for="reservation">Booking Request</label>
+        <select id="reservation" name="Reservation" required aria-required="true">
+            <option value="">Select an option</option>
+            <option value="yes">I want to book</option>
+            <option value="inquiry">Just an inquiry</option>
+        </select>
+
+        <label for="checkin">Check In Date</label>
+        <input id="checkin" name="CheckIn" type="date" required aria-required="true">
+
+        <label for="checkout">Check Out Date</label>
+        <input id="checkout" name="CheckOut" type="date" required aria-required="true">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="Message"
+                  placeholder="Your message here..."
+                  rows="5" required aria-required="true"></textarea>
+
+        <button type="submit" class="button">Send Request</button>
+    </form>
+</section>
+
+<section class="map-section">
+    <h2>Find Us</h2>
+    <p>Visit our beautiful cabin nestled in nature</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2393.8749999999995!2d-2.8916999999999998!3d53.1919999999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487add7b0d0d0d0d%3A0x1234567890abcdef!2sUniversity%20of%20Chester!5e0!3m2!1sen!2suk!4v1234567890123!5m2!1sen!2suk"
+            width="100%" height="400"
+            style="border:0; border-radius:20px;"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Location of Wooden Heritage Cabin">
+    </iframe>
+    <noscript>
+        <img src="~/images/map-static.png"
+             alt="Map showing location of Wooden Heritage Cabin">
+    </noscript>
+</section>

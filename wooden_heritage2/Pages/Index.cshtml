@@ -1,10 +1,31 @@
 ﻿@page
-@model IndexModel
+@model wooden_heritage2.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="hero">
+    <h1>Welcome to Wooden Heritage Cabin</h1>
+    <p>Experience the charm of wooden heritage cabin where every moment feels timeless</p>
+    <figure>
+        <img src="~/images/front-view.png"
+             alt="Front view of Wooden Heritage Cabin surrounded by nature"
+             class="curved">
+        <figcaption>Front view of cabin (AI Generated via Microsoft Copilot, 2026)</figcaption>
+    </figure>
+</section>
+
+<section>
+    <h2>Our Features</h2>
+    <div class="grid">
+        <div>Cozy Fireplace</div>
+        <div>Natural Wooden Interior</div>
+        <div>Outdoor Deck</div>
+        <div>Hot Tub</div>
+    </div>
+</section>
+
+<section>
+    <h2>Book Your Stay</h2>
+    <a asp-page="/Contact" class="button">Contact Us</a>
+</section>

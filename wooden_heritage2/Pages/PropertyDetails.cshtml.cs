@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace wooden_heritage2.Pages
 {
-    public class IndexModel : PageModel
+    public class PropertyDetailsModel : PageModel
     {
         public void OnGet() { }
     }

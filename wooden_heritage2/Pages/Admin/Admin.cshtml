@@ -1,0 +1,53 @@
+﻿@page
+@model wooden_heritage2.Pages.Admin.AdminModel
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<section class="admin-section">
+    <h1>Admin Panel</h1>
+    <p>Manage your property images here.</p>
+
+    <div class="admin-card">
+        <h2>Upload New Image</h2>
+        <form method="post" asp-page-handler="UploadImage" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+            <label for="imageFile">Choose Image</label>
+            <input id="imageFile" name="ImageFile" type="file" accept="image/*" required>
+            <label for="altText">Image Description</label>
+            <input id="altText" name="AltText" type="text" required>
+            <button type="submit" class="button">Upload Image</button>
+        </form>
+        @if (Model.ImageSuccessMessage != null)
+        {
+            <p class="success-message">@Model.ImageSuccessMessage</p>
+        }
+    </div>
+
+    <div class="admin-card">
+        <h2>Current Images</h2>
+        @if (Model.Images != null && Model.Images.Count > 0)
+        {
+            <div class="admin-image-grid">
+                @foreach (var image in Model.Images)
+                {
+                    <div class="admin-image-item">
+                        <img src="~/images/@image.FileName"
+                             alt="@image.AltText"
+                             class="admin-thumbnail">
+                        <p>@image.AltText</p>
+                        <form method="post" asp-page-handler="DeleteImage">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="ImageId" value="@image.Id">
+                            <button type="submit" class="button-delete">Delete</button>
+                        </form>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p>No images uploaded yet.</p>
+        }
+    </div>
+</section>

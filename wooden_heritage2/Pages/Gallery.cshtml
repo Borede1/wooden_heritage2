@@ -1,0 +1,106 @@
+﻿@page
+@model wooden_heritage2.Pages.GalleryModel
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+<section class="gallery-section">
+    <h1>Gallery</h1>
+    <p>Take a look at our beautiful cabin and surroundings</p>
+
+    <div class="carousel-container">
+        <div class="carousel">
+
+            <div class="carousel-slide active">
+                <figure>
+                    <img src="~/images/front-view.png" alt="Front view of Wooden Heritage Cabin" class="carousel-image">
+                    <figcaption>Front View (AI Generated via Microsoft Copilot, 2026)</figcaption>
+                </figure>
+            </div>
+
+            <div class="carousel-slide">
+                <figure>
+                    <img src="~/images/bedroom.png" alt="Master suite with timber walls" class="carousel-image">
+                    <figcaption>Suite Room (AI Generated via Microsoft Copilot, 2026)</figcaption>
+                </figure>
+            </div>
+
+            <div class="carousel-slide">
+                <figure>
+                    <img src="~/images/bedroom2.png" alt="Cozy bedroom with warm lighting" class="carousel-image">
+                    <figcaption>Bedroom 2 (AI Generated via Microsoft Copilot, 2026)</figcaption>
+                </figure>
+            </div>
+
+            <div class="carousel-slide">
+                <figure>
+                    <img src="~/images/bedroom3.png" alt="Comfortable bedroom for families" class="carousel-image">
+                    <figcaption>Bedroom 3 (AI Generated via Microsoft Copilot, 2026)</figcaption>
+                </figure>
+            </div>
+
+            <div class="carousel-slide">
+                <figure>
+                    <img src="~/images/bathroom.png" alt="Modern bathroom with heated floors" class="carousel-image">
+                    <figcaption>Bathroom (AI Generated via Microsoft Copilot, 2026)</figcaption>
+                </figure>
+            </div>
+
+            <div class="carousel-slide">
+                <figure>
+                    <img src="~/images/living-lounge.png" alt="Living room with fireplace" class="carousel-image">
+                    <figcaption>Living Lounge (AI Generated via Microsoft Copilot, 2026)</figcaption>
+                </figure>
+            </div>
+
+            <div class="carousel-slide">
+                <figure>
+                    <img src="~/images/kitchen.png" alt="Fully equipped modern kitchen" class="carousel-image">
+                    <figcaption>Kitchen (AI Generated via Microsoft Copilot, 2026)</figcaption>
+                </figure>
+            </div>
+
+            <div class="carousel-slide">
+                <figure>
+                    <img src="~/images/outdoor-deck.png" alt="Spacious wooden deck" class="carousel-image">
+                    <figcaption>Outdoor Deck (AI Generated via Microsoft Copilot, 2026)</figcaption>
+                </figure>
+            </div>
+
+        </div>
+
+        <button class="carousel-btn prev" onclick="changeSlide(-1)" aria-label="Previous image">&#10094;</button>
+        <button class="carousel-btn next" onclick="changeSlide(1)" aria-label="Next image">&#10095;</button>
+
+        <div class="carousel-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
+            <span class="dot" onclick="goToSlide(4)"></span>
+            <span class="dot" onclick="goToSlide(5)"></span>
+            <span class="dot" onclick="goToSlide(6)"></span>
+            <span class="dot" onclick="goToSlide(7)"></span>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function changeSlide(direction) { showSlide(currentSlide + direction); }
+        function goToSlide(index) { showSlide(index); }
+        setInterval(() => changeSlide(1), 4000);
+    </script>
+}
