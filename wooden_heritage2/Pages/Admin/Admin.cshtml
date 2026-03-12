@@ -10,14 +10,19 @@
 
     <div class="admin-card">
         <h2>Upload New Image</h2>
+
         <form method="post" asp-page-handler="UploadImage" enctype="multipart/form-data">
             @Html.AntiForgeryToken()
+
             <label for="imageFile">Choose Image</label>
             <input id="imageFile" name="ImageFile" type="file" accept="image/*" required>
+
             <label for="altText">Image Description</label>
             <input id="altText" name="AltText" type="text" required>
+
             <button type="submit" class="button">Upload Image</button>
         </form>
+
         @if (Model.ImageSuccessMessage != null)
         {
             <p class="success-message">@Model.ImageSuccessMessage</p>
@@ -26,7 +31,8 @@
 
     <div class="admin-card">
         <h2>Current Images</h2>
-        @if (Model.Images != null && Model.Images.Count > 0)
+
+        @if (Model.Images.Count > 0)
         {
             <div class="admin-image-grid">
                 @foreach (var image in Model.Images)

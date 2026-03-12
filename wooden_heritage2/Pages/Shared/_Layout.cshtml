@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 </head>
 <body>
+
     <header>
         <a asp-page="/Index" class="logo">WOODEN HERITAGE CABIN</a>
         <nav>
@@ -15,6 +16,7 @@
             <a asp-page="/PropertyDetails">Property Details</a>
             <a asp-page="/Gallery">Gallery</a>
             <a asp-page="/Contact">Contact Us</a>
+
             @if (User.Identity.IsAuthenticated)
             {
                 <a asp-page="/Admin/Admin">Admin</a>
@@ -27,7 +29,7 @@
         </nav>
     </header>
 
-    <main class="fade">
+    <main>
         @RenderBody()
     </main>
 
@@ -36,5 +38,6 @@
     </footer>
 
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>
